@@ -9,105 +9,23 @@ if [ $(whoami) == "root" ]; then     #"guarding against root execution"
     exit 0
 fi
 
-ask_user () {
-  read -r -p "$1 [y/N]" reply
-  case "$reply" in
-    [yY][eE][sS]|[yY] )
-      true
-      ;;
-    * ) 
-      false
-      ;;
-  esac
-}
+source $(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/utils.sh
+# ------------------------------------------------------------------------------
 
-apt_install () {
-  if ask_user "Do you wish to install $1?? "; then
-    sudo apt install -y $1
-    if [ $? -eq 0 ]; then
-      echo "<--------------------------- $1 Install OK"
-    else
-      echo "<--------------------------- $1 Install failed"
-      exit $?
-    fi
-  else
-    echo "Okay, no problem. :) Let's move on!"
-    echo "Skipping $1"
-  fi
-}
+print_msg "Ubuntu Development Setup - Hans"
+print_msg "Checking system version"
 
-code_install () {
-  if ask_user "Do you wish to install the extension $1?? "; then
-    code --install-extension $1
-    if [ $? -eq 0 ]; then
-      echo "<--------------------------- $1 Install OK"
-    else
-      echo "<--------------------------- $1 Install failed"
-      exit $?
-    fi
-  else
-    echo "Okay, no problem. :) Let's move on!"
-    echo "Skipping $1"
-  fi
-}
-
-snap_install () {
-  if ask_user "Do you wish to install ${1}?? Make SURE you have snap store installed?? "; then
-    sudo snap install $1
-    if [ $? -eq 0 ]; then
-      echo "<--------------------------- $1 Install OK"
-    else
-      echo "<--------------------------- $1 Install failed"
-      exit $?
-    fi
-  else
-    echo "Okay, no problem. :) Let's move on!"
-    echo "Skipping $1"
-  fi
-}
-
-
-echo "-------------------------------------------------"
-echo "<-- Ubuntu Development Setup - Hans -->"
-echo "-------------------------------------------------"
-
-echo "-------------------------------------------------"
-echo " <-- Checking system version -->"
-echo "-------------------------------------------------"
-
-if [ -f /etc/os-release ]; then
-    # freedesktop.org and systemd
-    . /etc/os-release
-    OS=$NAME
-    VER=$VERSION_ID
+if os_check ; then
+    return 255
 fi
 
-SYS_CHECK_OK=0
-if [[ "$OS" == "Ubuntu" ]] ; then
-    SYS_CHECK_OK=1
-    echo " <-- SYSTEM VERSION CHECK OK -->\n"
-else
-    read -r -p " Your system is not Ubuntu, continue to setup anyways? [y/N]" reply
-    case "$reply" in
-      [yY][eE][sS]|[yY] )
-        SYS_CHECK_OK=1;
-        echo " <-- SYSTEM VERSION CHECK FAILED BUT CONTINUING -->\n"
-        ;;
-      * )
-        SYS_CHECK_OK=0
-        echo " <-- SYSTEM VERSION CHECK FAILED -->\n"
-        return 1
-        ;;
-    esac
-fi
-
-if [[ "$SYS_CHECK_OK" == 0 ]]; then
-    return 1
-fi
+# ------------------------------------------------------------------------------
 
 echo "<-- Updating base system -->"
 sudo apt update
 sudo apt upgrade -y
+
+accept_all
 
 echo "-------------------------------------------------"
 echo "<-- Installing common tools -->"
@@ -131,12 +49,11 @@ snap_install "slack-term"
 snap_install "telegram-desktop"
 snap_install "termius-app"
 
-echo "-------------------------------------------------"
-echo "<-- Git install and config -->"
+
 if ask_user "Do you wish to install git??" ; then
   echo "Installing Git"
   sudo apt install -y git
-  if ask_user "Do you wish to configure git??" ; then
+  if ask_user "Do you wish to configure git GLOBALLY??" ; then
     echo "What username do you want to use for git?"
     read git_username
     git config --global user.name "$git_username"
@@ -144,6 +61,7 @@ if ask_user "Do you wish to install git??" ; then
     echo "What user email do you want to use for git?"
     read git_useremail
     git config --global user.email "$git_useremail"
+    echo "Git config done"
   else
     echo "Okay, no problem. :) Let's move on!"
     echo "Skipping Git config"
@@ -153,8 +71,6 @@ else
   echo "Skipping Git"
 fi
 
-echo "-------------------------------------------------"
-echo "<-- VSCode install and config -->"
 if ask_user "Do you wish to install VSCode??" ; then
   echo "Installing VSCode"
   sudo apt install -y apt-transport-https
@@ -165,7 +81,7 @@ if ask_user "Do you wish to install VSCode??" ; then
   sudo apt update
   sudo apt install -y code
   code --version
-  echo "-----------------------------------"
+
   if ask_user "Do you wish to install some of my favourite VSCode extentions? (you can choose for each)" ; then
     echo "Installing VSCode extensions"
     code_install eamodio.gitlens
@@ -188,17 +104,26 @@ else
   echo "Skipping VSCode"
 fi
 
-echo "-------------------------------------------------"
 if ask_user "Do you wish to install google chrome??" ; then
   echo "Installing chrome"
   wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   sudo apt install ./google-chrome-stable_current_amd64.deb
+  rm ./google-chrome-stable_current_amd64.deb
 else
   echo "Okay, no problem. :) Let's move on!"
   echo "Skipping google chrome"
 fi
 
-echo "-------------------------------------------------"
+if ask_user "Do you wish to install teamviewer??" ; then
+  echo "Installing teamviewer"
+  wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+  sudo apt install ./teamviewer_amd64.deb
+  rm ./teamviewer_amd64.deb
+else
+  echo "Okay, no problem. :) Let's move on!"
+  echo "Skipping teamviewer"
+fi
+
 if ask_user "Do you wish to add my aliases to bashrc??" ; then
   echo "#My own aliases----" >> ~/.bashrc
   echo "alias uupgrade="sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove"" >> ~/.bashrc
@@ -213,6 +138,4 @@ fi
 echo "<-- cleaning -->"
 sudo apt autoremove -y
 
-echo "-------------------------------------------------"
-echo "<-- Linux Development Setup Done -->"
-echo "-------------------------------------------------"
+print_msg "Linux Development Setup Done :D"

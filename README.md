@@ -86,5 +86,6 @@ ___Current set includes...___
         * [ROS pack](https://marketplace.visualstudio.com/items?itemName=ms-iot.vscode-ros)
         * [Java Extension pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 3. Google chrome browser
-4. My personal aliases (___not recommended to install___)
+4. Teamviewer
+5. My personal aliases (___not recommended to install___)
     * Will add my standard set of aliases to ~/.bashrc 

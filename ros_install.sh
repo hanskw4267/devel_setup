@@ -7,10 +7,10 @@ if [ $(whoami) == "root" ]; then     #"guarding against root execution"
     echo -e $COLOR$onlyroot$MONO
     exit 0
 fi
+source $(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/utils.sh
+# ------------------------------------------------------------------------------
 
-echo "-------------------------------------------------"
-echo "<-- ROS Setup - Hans -->"
-echo "-------------------------------------------------"
+print_msg "ROS Install - Hans"
 
 declare -A verArray=([melodic]=18 [noetic]=20)
 echo " Which distro of ROS to install??"
@@ -30,46 +30,11 @@ select reply in "melodic" "noetic"; do
     esac
   done
 
-echo "-------------------------------------------------"
-echo " <-- Checking system version -->"
-echo "-------------------------------------------------"
+print_msg "Checking system version"
 
-OS=""
-VER=""
-if [ -f /etc/os-release ]; then
-    # freedesktop.org and systemd
-    . /etc/os-release
-    OS=$NAME
-    VER=$VERSION_ID
+if os_ver_check "${verArray[$ROS_DISTRO]}" ; then
+    return 255
 fi
-
-SYS_CHECK_OK=0
-if [[ "$VER" == "${verArray[$ROS_DISTRO]}"*  ]] && [[ "$OS" == "Ubuntu" ]] ; then
-    SYS_CHECK_OK=1
-    echo " <-- SYSTEM VERSION CHECK OK -->"
-    echo "-------------------------------------------------"
-else
-    read -r -p " Your system is not Ubuntu "${verArray[$ROS_DISTRO]}".XX, continue to install anyways? [y/N]" reply
-    case "$reply" in
-      [yY][eE][sS]|[yY] )
-        SYS_CHECK_OK=1;
-        echo " <-- SYSTEM VERSION CHECK FAILED BUT CONTINUING -->"
-        ;;
-      * )
-        SYS_CHECK_OK=0
-        echo " <-- SYSTEM VERSION CHECK FAILED -->"
-        return 1
-        ;;
-    esac
-fi
-
-if [[ "$SYS_CHECK_OK" == 0 ]]; then
-    return 1
-fi
-
-echo "<-- Updating base system -->"
-sudo apt update
-sudo apt upgrade -y
 
 echo "-------------------------------------------------"
 echo " Which config of "${ROS_DISTRO}" to install??"
@@ -93,7 +58,14 @@ select reply in "base" "desktop" "desktop-full"; do
     esac
   done
   
-echo " Chosen ROS distro:"${ROS_DISTRO}" config:"${ROS_CONFIG}""
+echo " Chosen ROS distro: "${ROS_DISTRO}" config: "${ROS_CONFIG}""
+# ------------------------------------------------------------------------------
+
+echo "<-- Updating base system -->"
+sudo apt update
+sudo apt upgrade -y
+
+accept_all
 
 echo "-------------------------------------------------"
 echo " <-- Installing ROS "${ROS_DISTRO}" -->"
@@ -107,44 +79,32 @@ sudo apt update
 sudo apt install -y ros-"${ROS_DISTRO}"-"${ROS_CONFIG}"
 source /opt/ros/"${ROS_DISTRO}"/setup.bash
 
-echo "-------------------------------------------------"
-read -r -p " Add ROS "${ROS_DISTRO}" setup.bash sourcing to bashrc?? [y/N]" reply
-case "$reply" in
-  [yY][eE][sS]|[yY] )
-      echo "# ROS "${ROS_DISTRO}" sourcing" >> ~/.bashrc
-      echo "source /opt/ros/"${ROS_DISTRO}"/setup.bash" >> ~/.bashrc
-      echo "Do check the sourcing was applied after this"
-      ;;
-  * )
-      echo "Okay, no problem. :) Let's move on!"
-      echo "Skipping sourcing"
-      ;;
-esac
+if ask_user " Add ROS "${ROS_DISTRO}" setup.bash sourcing to bashrc??" ; then
+  echo "# ROS "${ROS_DISTRO}" sourcing" >> ~/.bashrc
+  echo "source /opt/ros/"${ROS_DISTRO}"/setup.bash" >> ~/.bashrc
+  echo "Do check the sourcing was applied after this"
+else
+  echo "Okay, no problem. :) Let's move on!"
+  echo "Skipping sourcing"
+fi
 
-echo "-------------------------------------------------"
-read -r -p " Install and init rosdep?? [y/N]" reply
-case "$reply" in
-  [yY][eE][sS]|[yY] )
-      echo "Install and initializing rosdep!!"
-      sudo apt install -y python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
-      sudo rosdep init
-      rosdep update
-      ;;
-  * )
-      echo "Okay, no problem. :) Let's move on!"
-      echo "Skipping rosdep"
-      ;;
-esac
+if ask_user " Install and init rosdep??" ; then
+  echo "Install and initializing rosdep!!"
+  sudo apt install -y python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+  sudo rosdep init
+  rosdep update
+else
+  echo "Okay, no problem. :) Let's move on!"
+  echo "Skipping rosdep"
+fi
 
-echo "-------------------------------------------------"
-read -r -p " Install and init catkin tools?? [y/N]" reply
-case "$reply" in
-  [yY][eE][sS]|[yY] )
-      echo "Installing catkin tools!!"
-      sudo apt install -y python3-catkin-tools
-      ;;
-  * )
-      echo "Okay, no problem. :) Let's move on!"
-      echo "Skipping catkin tools"
-      ;;
-esac
+
+if ask_user "Install and init catkin tools?? " ; then
+  echo "Installing catkin tools!!"
+  sudo apt install -y python3-catkin-tools
+else
+  echo "Okay, no problem. :) Let's move on!"
+  echo "Skipping catkin tools"
+fi
+
+print_msg "ROS Install Done"
