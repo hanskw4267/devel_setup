@@ -58,7 +58,7 @@ Additionally choose to...
 
 Choose among set of common development/collaboration tools to install/config on the system.
 
-Script will attempt to check that the system has the correct ubuntu version for the chosen distro and will warn if check has failed (___warning ignorable___).
+Script will attempt to check that the system is ubuntu and will warn if check has failed (___warning ignorable___).
 
 ___Current set includes...___
 
