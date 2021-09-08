@@ -33,6 +33,12 @@ Choose between ROS1 distros and configurations to install on the system
 
 Script will attempt to check that the system has the correct ubuntu version for the chosen distro and will warn if check has failed (___warning ignorable___).
 
+Additionally choose to...
+
+1. Add installed ros' setup.bash sourcing to .bashrc
+2. Install & init rosdep
+3. Install catkin tools
+
 ### [ros2_install.sh](./ros2_install.sh)
 
 Choose between ROS2 distros and configurations to install on the system
@@ -42,6 +48,11 @@ Choose between ROS2 distros and configurations to install on the system
 3. galactic
 
 Script will attempt to check that the system has the correct ubuntu version for the chosen distro and will warn if check has failed (___warning ignorable___).
+
+Additionally choose to...
+
+1. Add installed ros' setup.bash sourcing to .bashrc
+2. Install & source colcon
 
 ### [ubuntu_devel_setup.sh](./ubuntu_devel_setup.sh)
 
