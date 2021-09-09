@@ -39,6 +39,8 @@ Additionally choose to...
 2. Install & init rosdep
 3. Install catkin tools
 
+----
+
 ### [ros2_install.sh](./ros2_install.sh)
 
 Choose between ROS2 distros and configurations to install on the system
@@ -53,6 +55,8 @@ Additionally choose to...
 
 1. Add installed ros' setup.bash sourcing to .bashrc
 2. Install & source colcon
+
+----
 
 ### [basic_install.sh](./basic_install.sh)
 
@@ -106,6 +110,15 @@ ___Current set includes...___
 5. My personal aliases (___not recommended to install___)
     * Will add my standard set of aliases to ~/.bashrc
 
+----
+
 ### [wine_install.sh](./wine_install.sh)
 
 Installs the [WINE](https://www.winehq.org/) compatibility layer on a ubuntu system.
+
+----
+
+### [docker_install.sh](./docker_install.sh)
+
+Installs [Docker](https://www.docker.com/) onto a ubuntu system.  
+Optionally install docker compose
