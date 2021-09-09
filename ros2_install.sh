@@ -74,7 +74,7 @@ if ask_user "Add ROS2 "${ROS_DISTRO}" setup.bash sourcing to bashrc??" ; then
   echo "# ROS2 "${ROS_DISTRO}" sourcing" >> ~/.bashrc
   echo "source /opt/ros/"${ROS_DISTRO}"/setup.bash" >> ~/.bashrc
   echo "Do check the sourcing was applied after this"
-then
+else
   echo "Okay, no problem. :) Let's move on!"
   echo "Skipping sourcing"
 fi
