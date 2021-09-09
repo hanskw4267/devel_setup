@@ -1,13 +1,9 @@
 #! /usr/bin/env bash
+
 # ROS install
 
-onlyroot="Do not run this script as root!!!"
-
-if [ $(whoami) == "root" ]; then     #"guarding against root execution"
-    echo -e $COLOR$onlyroot$MONO
-    exit 0
-fi
 source $(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/utils.sh
+root_guard
 # ------------------------------------------------------------------------------
 
 print_msg "ROS2 Install - Hans"
@@ -33,8 +29,6 @@ select reply in "dashing" "foxy" "galactic"; do
         ;;
     esac
   done
-
-print_msg "Checking system version"
 
 if os_ver_check "${verArray[$ROS_DISTRO]}" ; then
     return 255

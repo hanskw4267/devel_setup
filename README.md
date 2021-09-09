@@ -104,4 +104,8 @@ ___Current set includes...___
 3. Google chrome browser
 4. Teamviewer
 5. My personal aliases (___not recommended to install___)
-    * Will add my standard set of aliases to ~/.bashrc 
+    * Will add my standard set of aliases to ~/.bashrc
+
+### [wine_install.sh](./wine_install.sh)
+
+Installs the [WINE](https://www.winehq.org/) compatibility layer on a ubuntu system.

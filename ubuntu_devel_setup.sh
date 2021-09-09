@@ -2,23 +2,15 @@
 
 # Post install script to setup a linux development environment
 
-onlyroot="Do not run this script as root!!!"
-
-if [ $(whoami) == "root" ]; then     #"guarding against root execution"
-    echo -e $COLOR$onlyroot$MONO
-    exit 0
-fi
-
 source $(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/utils.sh
+root_guard
 # ------------------------------------------------------------------------------
 
 print_msg "Ubuntu Development Setup - Hans"
-print_msg "Checking system version"
 
 if os_check ; then
     return 255
 fi
-
 # ------------------------------------------------------------------------------
 
 echo "<-- Updating base system -->"

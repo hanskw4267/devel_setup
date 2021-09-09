@@ -2,6 +2,20 @@
 
 # Utility functions for the other scripts
 
+onlyroot="Do not run this script as root!!!"
+root_guard() {
+  if [ $(whoami) == "root" ]; then     #"guarding against root execution"
+      echo -e $COLOR$onlyroot$MONO
+      exit 0
+  fi
+}
+
+print_msg() {
+  echo "-------------------------------------------------"
+  echo "<-- "$1" -->"
+  echo "-------------------------------------------------"
+}
+
 ask_user () {
   echo "-------------------------------------------------"
   if [[ "$ACCEPT_ALL" == 0 ]] ; then
@@ -78,11 +92,15 @@ snap_install () {
 source_os () {
   NAME=""
   if [ -f /etc/os-release ]; then
-      source /etc/os-release
+    source /etc/os-release
+    true
+  else
+    false
   fi
 }
 
 os_check () {
+  print_msg "Checking system version"
   source_os
   if [[ "$NAME" == "Ubuntu" ]] ; then
     echo " <-- SYSTEM VERSION CHECK OK --> "
@@ -103,6 +121,7 @@ os_check () {
 }
 
 os_ver_check() {
+  print_msg "Checking system version"
   source_os
   if [[ "$NAME" == "Ubuntu" ]] && [[ "$VERSION_ID" == "$1"* ]] ; then
     echo " <-- SYSTEM VERSION CHECK OK --> "
@@ -122,8 +141,19 @@ os_ver_check() {
   fi
 }
 
-print_msg() {
-  echo "-------------------------------------------------"
-  echo "<-- "$1" -->"
-  echo "-------------------------------------------------"
+64b_check() {
+  print_msg "Checking system's architecture"
+  if [[ "$(dpkg --print-architecture)" == "amd64" ]] ; then
+    true
+  else
+    false
+  fi
+}
+
+32b_check() {
+  if [[ "$(dpkg --print-foreign-architectures)" == "i386" ]] ; then
+    true
+  else
+    false
+  fi
 }
