@@ -6,7 +6,7 @@ source $(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/utils.sh
 root_guard
 # ------------------------------------------------------------------------------
 
-print_msg "Ubuntu Development Setup - Hans"
+print_msg "Basic Development Setup - Hans"
 
 if os_check ; then
     return 255
@@ -130,4 +130,4 @@ fi
 echo "<-- cleaning -->"
 sudo apt autoremove -y
 
-print_msg "Linux Development Setup Done :D"
+print_msg "Basic Development Setup Done :D"

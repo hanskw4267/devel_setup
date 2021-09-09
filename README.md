@@ -54,7 +54,7 @@ Additionally choose to...
 1. Add installed ros' setup.bash sourcing to .bashrc
 2. Install & source colcon
 
-### [ubuntu_devel_setup.sh](./ubuntu_devel_setup.sh)
+### [basic_install.sh](./basic_install.sh)
 
 Choose among set of common development/collaboration tools to install/config on the system.
 
