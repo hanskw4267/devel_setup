@@ -87,6 +87,8 @@ ___Current set includes...___
 3. [Slack terminal](https://snapcraft.io/slack-term)
 4. [Telegram](https://snapcraft.io/telegram-desktop)
 5. [Termius app](https://snapcraft.io/termius-app)
+6. [Discord](https://snapcraft.io/discord)
+7. [skype](https://snapcraft.io/skype)
 
 #### __Others__
 
