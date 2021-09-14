@@ -44,13 +44,15 @@ if [[ "$VERSION_ID" == *"18"* ]] ; then
   sudo apt-key add Release.key
   sudo add-apt-repository 'deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./'
   sudo apt update
+  rm Release.key
 fi
 
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
-sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ "$UBUNTU_CONDENAME" main'
+sudo add-apt-repository "deb https://dl.winehq.org/wine-builds/ubuntu/ "${UBUNTU_CODENAME}" main"
 sudo apt update
-sudo apt install --install-recommends winehq-stable
+sudo apt install -y --install-recommends winehq-stable
+rm winehq.key
 
 print_msg "WINE install done. Installed version"
 wine --version
