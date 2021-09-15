@@ -10,6 +10,12 @@ print_msg "Docker (compose) Install - Hans"
 
 if os_check ; then
     return 255
+else
+  if 64b_check ; then
+    :
+  else
+    return 255
+  fi
 fi
 # ------------------------------------------------------------------------------
 
@@ -19,13 +25,16 @@ sudo apt upgrade -y
 
 accept_all
 
-echo 'installing docker' 
-sudo apt-get remove docker docker-engine docker.io
-sudo apt install docker.io -y
-sudo systemctl start docker
-sudo systemctl enable docker
-docker --version
-chmod 777 /var/run/docker.sock
+print_msg 'Installing docker' 
+sudo apt remove docker docker-engine docker.io containerd runc
+sudo apt install apt-transport-https ca-certificates curl gnupg lsb-release
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io
 docker run hello-world
 
 if ask_user "Do you wish to install docker compose??" ; then
