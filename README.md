@@ -79,6 +79,8 @@ ___Current set includes...___
 9. Virtualenv
 10. Pip3
 11. Net-tools
+12. Valgrind
+13. htop
 
 #### __From snap store__
 
