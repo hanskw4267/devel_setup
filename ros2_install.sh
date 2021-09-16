@@ -51,7 +51,8 @@ select reply in "base" "desktop"; do
         ;;
     esac
   done
-echo " Chosen ROS distro:"${ROS_DISTRO}" config:"${ROS_CONFIG}""
+
+print_msg " Chosen ROS distro:"${ROS_DISTRO}" config:"${ROS_CONFIG}""
 # ------------------------------------------------------------------------------
 
 echo "<-- Updating base system -->"
