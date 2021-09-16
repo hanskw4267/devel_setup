@@ -91,11 +91,18 @@ snap_install () {
 
 source_os () {
   NAME=""
-  if [ -f /etc/os-release ]; then
+  if [ -f /etc/os-release ]; then # try os-release
     source /etc/os-release
     true
-  else
-    false
+  else  # try lsb_release
+    NAME=$(lsb_release -si) 
+    VERSION_ID=$(lsb_release -sr)
+    VERSION_CODENAME=$(lsb_release -sc)
+    if [ $? -eq 0 ]; then
+      true
+    else
+      false
+    fi
   fi
 }
 
@@ -123,11 +130,11 @@ os_check () {
 os_ver_check() {
   print_msg "Checking system version"
   source_os
-  if [[ "$NAME" == "Ubuntu" ]] && [[ "$VERSION_ID" == "$1"* ]] ; then
+  if [[ "$NAME" == "Ubuntu" ]] && [[ "$VERSION_CODENAME" == "$1" ]] ; then
     echo " <-- SYSTEM VERSION CHECK OK --> "
     false
   else
-    read -r -p " Your system is not Ubuntu "$1".XX, continue to setup anyways? [y/N]" reply
+    read -r -p " Your system is not Ubuntu "$1" , continue to setup anyways? [y/N]" reply
     case "$reply" in
       [yY][eE][sS]|[yY] )
         echo " <-- SYSTEM VERSION CHECK FAILED BUT CONTINUING --> "

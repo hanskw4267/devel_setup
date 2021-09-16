@@ -8,7 +8,7 @@ root_guard
 
 print_msg "ROS Install - Hans"
 
-declare -A verArray=([melodic]=18 [noetic]=20)
+declare -A verArray=(["melodic"]="bionic" ["noetic"]="focal")
 echo " Which distro of ROS to install??"
 select reply in "melodic" "noetic"; do
     case $reply in
