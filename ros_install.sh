@@ -84,8 +84,18 @@ fi
 
 if ask_user " Install and init rosdep??" ; then
   echo "Install and initializing rosdep!!"
-  sudo apt install -y python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
-  sudo rosdep init
+  
+  # Python3 support in noetic
+  if [[ "${ROS_DISTRO}" == "noetic" ]] ; then
+    sudo apt install -y python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+  else
+    sudo apt install -y python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+  fi
+
+  # Only init if it has not already been done before
+  if [ ! -e /etc/ros/rosdep/sources.list.d/20-default.list ]; then
+    sudo rosdep init
+  fi
   rosdep update
 else
   echo "Okay, no problem. :) Let's move on!"
