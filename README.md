@@ -4,23 +4,23 @@ Collection of setup scripts i use
 
 ## Running the scripts
 
-Run the scripts using
+__BASH EXPECTED__  
+Run the scripts in a terminal using
 
 ```shell
 source <script_file>
 ```
 
-__Or__
+___OR___
 
 ```shell
 chmod +x <script_file>
 ./<script_file>
 ```
 
-> ___Caution: scripts will ask if you want to accept all future prompts, 
+> ___Caution: scripts will ask if you want to accept all future prompts,
 accepting will cause the script to attempt to install everything the script can install. (will still need inputs for stuff like git config, etc)___  
-
-> __YOU HAVE BEEN WARNED__
+> ___YOU HAVE BEEN WARNED___
 
 ## The scripts
 
