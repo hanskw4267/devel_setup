@@ -28,8 +28,8 @@ accepting will cause the script to attempt to install everything the script can 
 
 Choose between ROS1 distros and configurations to install on the system
 
-1. melodic
-2. noetic
+1. melodic (bionic)
+2. noetic (focal)
 
 Script will attempt to check that the system has the correct ubuntu version for the chosen distro and will warn if check has failed (___warning ignorable___).
 
@@ -45,9 +45,9 @@ Additionally choose to...
 
 Choose between ROS2 distros and configurations to install on the system
 
-1. dashing
-2. foxy
-3. galactic
+1. dashing (bionic)
+2. foxy (focal)
+3. galactic (focal)
 
 Script will attempt to check that the system has the correct ubuntu version for the chosen distro and will warn if check has failed (___warning ignorable___).
 
