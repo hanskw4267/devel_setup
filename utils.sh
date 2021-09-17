@@ -93,17 +93,16 @@ source_os () {
   NAME=""
   if [ -f /etc/os-release ]; then # try os-release
     source /etc/os-release
-    true
   else  # try lsb_release
     NAME=$(lsb_release -si) 
     VERSION_ID=$(lsb_release -sr)
     VERSION_CODENAME=$(lsb_release -sc)
-    if [ $? -eq 0 ]; then
-      true
-    else
-      false
-    fi
+    PRETTY_NAME=$(lsb_release -sd)
   fi
+
+  echo "Detected system:"
+  echo "OS Name: "${PRETTY_NAME}""
+  echo -e "OS Codename: "${VERSION_CODENAME}"\n"
 }
 
 os_check () {
@@ -121,6 +120,7 @@ os_check () {
         ;;
       * )
         echo " <-- SYSTEM VERSION CHECK FAILED --> "
+        echo "-------------------------------------------------"
         true
         ;;
     esac
@@ -142,6 +142,7 @@ os_ver_check() {
         ;;
       * )
         echo " <-- SYSTEM VERSION CHECK FAILED --> "
+        echo "-------------------------------------------------"
         true
         ;;
     esac
