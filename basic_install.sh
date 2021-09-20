@@ -123,10 +123,10 @@ fi
 
 if ask_user "Do you wish to add my aliases to bashrc??" ; then
   echo "#My own aliases----" >> ~/.bashrc
-  echo "alias uupgrade="sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove"" >> ~/.bashrc
-  echo "alias git="git "" >> ~/.bashrc
-  echo "alias clone="clone --recursive"" >> ~/.bashrc
-  echo "alias cd="cd "" >> ~/.bashrc
+  echo "alias uupgrade=\"sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove\"" >> ~/.bashrc
+  echo "alias git=\"git \"" >> ~/.bashrc
+  echo "alias clone=\"clone --recursive\"" >> ~/.bashrc
+  echo "alias cd=\"cd \"" >> ~/.bashrc
 else
   echo "Okay, no problem. :) Let's move on!"
   echo "Skipping aliases"
