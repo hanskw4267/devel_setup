@@ -2,6 +2,8 @@
 
 Collection of setup scripts i use
 
+Feel free to open a issue for any bugs you find, or any ideas for new scripts to add. :D
+
 ## Running the scripts
 
 __BASH EXPECTED__  
