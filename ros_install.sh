@@ -111,4 +111,7 @@ else
   echo "Skipping catkin tools"
 fi
 
+print_msg "cleaning with autoremove"
+sudo apt autoremove
+
 print_msg "ROS Install Done"

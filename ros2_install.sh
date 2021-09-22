@@ -93,4 +93,7 @@ else
   echo "Skipping colcon"
 fi
 
+print_msg "cleaning with autoremove"
+sudo apt autoremove
+
 print_msg "ROS2 Install Done"

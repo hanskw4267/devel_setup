@@ -121,6 +121,16 @@ else
   echo "Skipping teamviewer"
 fi
 
+if ask_user "Do you wish to install zoom??" ; then
+  echo "Installing teamviewer"
+  wget https://zoom.us/client/latest/zoom_amd64.deb
+  sudo apt install -y ./zoom_amd64.deb
+  rm ./zoom_amd64.deb
+else
+  echo "Okay, no problem. :) Let's move on!"
+  echo "Skipping zoom"
+fi
+
 if ask_user "Do you wish to add my aliases to bashrc??" ; then
   echo "#My own aliases----" >> ~/.bashrc
   echo "alias uupgrade=\"sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove\"" >> ~/.bashrc
@@ -132,7 +142,7 @@ else
   echo "Skipping aliases"
 fi
 
-echo "<-- cleaning -->"
+print_msg "cleaning with autoremove"
 sudo apt autoremove -y
 
 print_msg "Basic Development Setup Done :D"
