@@ -122,7 +122,7 @@ else
 fi
 
 if ask_user "Do you wish to install zoom??" ; then
-  echo "Installing teamviewer"
+  echo "Installing zoom"
   wget https://zoom.us/client/latest/zoom_amd64.deb
   sudo apt install -y ./zoom_amd64.deb
   rm ./zoom_amd64.deb
