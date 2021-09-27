@@ -60,7 +60,7 @@ Additionally choose to...
 
 ----
 
-### [basic_install.sh](./basic_install.sh)
+### [basic_minimal.sh](./basic_minimal.sh)
 
 Choose among set of common development/collaboration tools to install/config on the system.
 
@@ -68,33 +68,21 @@ Script will attempt to check that the system is ubuntu and will warn if check ha
 
 ___Current set includes...___
 
-#### __Using apt__
+__Using apt__
 
-1. Snap store
-2. Terminator emulator
-3. Vim editor
-4. Nano editor
-5. Wget
-6. Curl
-7. Openssh server and client
-8. Build essentials and cmake
-9. Virtualenv
-10. Pip3
-11. Net-tools
-12. Valgrind
-13. htop
+1. Terminator emulator
+2. Vim editor
+3. Nano editor
+4. Wget
+5. Curl
+6. Openssh server and client
+7. Build essentials and cmake
+8. Pip3
+9. Net-tools
+10. Valgrind
+11. htop
 
-#### __From snap store__
-
-1. [Spotify](https://snapcraft.io/spotify)
-2. [Slack](https://snapcraft.io/slack)
-3. [Slack terminal](https://snapcraft.io/slack-term)
-4. [Telegram](https://snapcraft.io/telegram-desktop)
-5. [Termius app](https://snapcraft.io/termius-app)
-6. [Discord](https://snapcraft.io/discord)
-7. [skype](https://snapcraft.io/skype)
-
-#### __Others__
+__Others__
 
 1. Git
     * Optional git "config" __global__ configuration
@@ -111,12 +99,39 @@ ___Current set includes...___
         * [Prettier formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
         * [ROS pack](https://marketplace.visualstudio.com/items?itemName=ms-iot.vscode-ros)
         * [Java Extension pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
-3. Google chrome browser
-4. Teamviewer
-5. Zoom
-6. My personal aliases (___not recommended to install___)
+3. My personal aliases (___not recommended to install___)
     * Will add my standard set of aliases to ~/.bashrc
 
+----
+
+### [basic_full.sh](./basic_full.sh)
+
+Extra set development/collaboration tools to install/config on the system on top of the minimal install.  
+__Running this script will also run the basic minimal install and will ask if you want to accept all future prompts again__  
+Script will attempt to check that the system is ubuntu and will warn if check has failed (___warning ignorable___).
+
+___Current set includes...___
+
+__Using apt__
+
+1. Snap store
+2. Virtualenv
+
+__From snap store__
+
+1. [Spotify](https://snapcraft.io/spotify)
+2. [Slack](https://snapcraft.io/slack)
+3. [Slack terminal](https://snapcraft.io/slack-term)
+4. [Telegram](https://snapcraft.io/telegram-desktop)
+5. [Termius app](https://snapcraft.io/termius-app)
+6. [Discord](https://snapcraft.io/discord)
+7. [skype](https://snapcraft.io/skype)
+
+__Others__
+
+1. Google chrome browser
+2. Teamviewer
+3. Zoom
 ----
 
 ### [wine_install.sh](./wine_install.sh)

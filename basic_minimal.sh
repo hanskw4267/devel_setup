@@ -19,9 +19,7 @@ sudo apt upgrade -y
 
 accept_all
 
-echo "-------------------------------------------------"
-echo "<-- Installing common tools -->"
-apt_install "snapd"
+print_msg "Installing basic tools"
 apt_install "terminator"
 apt_install "vim"
 apt_install "nano"
@@ -30,22 +28,10 @@ apt_install "curl"
 apt_install "openssh-server"
 apt_install "build-essential"
 apt_install "cmake"
-apt_install "virtualenv"
 apt_install "python3-pip"
 apt_install "net-tools"
 apt_install "valgrind"
 apt_install "htop"
-
-echo "-------------------------------------------------"
-echo "<-- Installing snaps -->"
-snap_install "spotify"
-snap_install "slack --classic"
-snap_install "slack-term"
-snap_install "telegram-desktop"
-snap_install "termius-app"
-snap_install "discord"
-snap_install "skype"
-
 
 if ask_user "Do you wish to install git??" ; then
   echo "Installing Git"
@@ -99,36 +85,6 @@ if ask_user "Do you wish to install VSCode??" ; then
 else
   echo "Okay, no problem. :) Let's move on!"
   echo "Skipping VSCode"
-fi
-
-if ask_user "Do you wish to install google chrome??" ; then
-  echo "Installing chrome"
-  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  sudo apt install ./google-chrome-stable_current_amd64.deb
-  rm ./google-chrome-stable_current_amd64.deb
-else
-  echo "Okay, no problem. :) Let's move on!"
-  echo "Skipping google chrome"
-fi
-
-if ask_user "Do you wish to install teamviewer??" ; then
-  echo "Installing teamviewer"
-  wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
-  sudo apt install ./teamviewer_amd64.deb
-  rm ./teamviewer_amd64.deb
-else
-  echo "Okay, no problem. :) Let's move on!"
-  echo "Skipping teamviewer"
-fi
-
-if ask_user "Do you wish to install zoom??" ; then
-  echo "Installing zoom"
-  wget https://zoom.us/client/latest/zoom_amd64.deb
-  sudo apt install -y ./zoom_amd64.deb
-  rm ./zoom_amd64.deb
-else
-  echo "Okay, no problem. :) Let's move on!"
-  echo "Skipping zoom"
 fi
 
 if ask_user "Do you wish to add my aliases to bashrc??" ; then
