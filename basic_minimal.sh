@@ -101,4 +101,4 @@ fi
 print_msg "cleaning with autoremove"
 sudo apt autoremove -y
 
-print_msg "Basic Development Setup Done :D"
+print_msg "Minimal Basic Development Setup Done :D"

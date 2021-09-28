@@ -35,7 +35,9 @@ echo \
 
 sudo apt update
 sudo apt install -y docker-ce docker-ce-cli containerd.io
-docker run hello-world
+
+print_msg "Trying hello-world image"
+sudo docker run hello-world
 
 if ask_user "Do you wish to install docker compose??" ; then
   echo 'installing docker compose' 
