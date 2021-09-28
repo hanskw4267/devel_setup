@@ -19,7 +19,7 @@ else
 fi
 # ------------------------------------------------------------------------------
 
-echo "<-- Updating base system -->"
+print_msg "<-- Updating base system -->"
 sudo apt update
 sudo apt upgrade -y
 

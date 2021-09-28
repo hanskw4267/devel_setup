@@ -55,7 +55,7 @@ select reply in "base" "desktop"; do
 print_msg " Chosen ROS distro:"${ROS_DISTRO}" config:"${ROS_CONFIG}""
 # ------------------------------------------------------------------------------
 
-echo "<-- Updating base system -->"
+print_msg "<-- Updating base system -->"
 sudo apt update
 sudo apt upgrade -y
 
