@@ -14,7 +14,6 @@ if [[ "${ret}" -ne 0 ]] ; then
 fi
 
 print_msg "Continuing install for extra tools"
-accept_all
 
 apt_install "snapd"
 apt_install "virtualenv"

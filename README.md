@@ -107,7 +107,7 @@ __Others__
 ### [basic_full.sh](./basic_full.sh)
 
 Extra set development/collaboration tools to install/config on the system on top of the minimal install.  
-__Running this script will also run the basic minimal install and will ask if you want to accept all future prompts again__  
+__Running this script will also run the basic minimal install__  
 Script will attempt to check that the system is ubuntu and will warn if check has failed (___warning ignorable___).
 
 ___Current set includes...___
