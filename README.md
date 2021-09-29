@@ -125,7 +125,8 @@ __From snap store__
 4. [Telegram](https://snapcraft.io/telegram-desktop)
 5. [Termius app](https://snapcraft.io/termius-app)
 6. [Discord](https://snapcraft.io/discord)
-7. [skype](https://snapcraft.io/skype)
+7. [Skype](https://snapcraft.io/skype)
+8. [Microsoft teams](https://snapcraft.io/teams)
 
 __Others__
 
