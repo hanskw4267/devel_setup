@@ -1,6 +1,16 @@
 #! /usr/bin/env bash
 
+#
+# wine_install.sh
+#
+# Created on Tue Oct 05 2021 16:46:04
+#
+# Description:
 # Ubuntu wine install
+#   
+# Copyright (c) 2021 Hans Kurnia
+#
+
 
 source $(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/utils.sh
 root_guard

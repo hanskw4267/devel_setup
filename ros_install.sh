@@ -1,6 +1,15 @@
 #! /usr/bin/env bash
 
-# ROS install
+#
+# ros_install.sh
+#
+# Created on Tue Oct 05 2021 16:44:48
+#
+# Description:
+# ROS1 installation script
+#
+# Copyright (c) 2021 Hans Kurnia
+#
 
 source $(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/utils.sh
 root_guard

@@ -1,6 +1,15 @@
 #! /usr/bin/env bash
 
+#
+# basic_minimal.sh
+#
+# Created on Tue Oct 05 2021 16:43:35
+#
+# Description:
 # Post install script to setup a linux development environment
+#  
+# Copyright (c) 2021 Hans Kurnia
+#
 
 source $(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/utils.sh
 root_guard

@@ -1,6 +1,16 @@
 #! /usr/bin/env bash
 
+#
+# docker_install.sh
+#
+# Created on Tue Oct 05 2021 16:43:59
+#
+# Description:
 # Script to install docker and docker compose
+#   
+# Copyright (c) 2021 Hans Kurnia
+#
+
 
 source $(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/utils.sh
 root_guard

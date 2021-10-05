@@ -1,6 +1,15 @@
 #! /usr/bin/env bash
 
+#
+# basic_full.sh
+#
+# Created on Tue Oct 05 2021 16:42:48
+#
+# Description:
 # Post install script to setup a linux development environment
+#   
+# Copyright (c) 2021 Hans Kurnia
+#
 
 source $(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/utils.sh
 root_guard

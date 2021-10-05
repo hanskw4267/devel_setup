@@ -1,6 +1,15 @@
 #! /usr/bin/env bash
 
+#
+# utils.sh
+#
+# Created on Tue Oct 05 2021 16:45:27
+#
+# Description:
 # Utility functions for the other scripts
+#   
+# Copyright (c) 2021 Hans Kurnia
+#
 
 onlyroot="Do not run this script as root!!!"
 root_guard() {
