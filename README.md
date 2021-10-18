@@ -116,6 +116,7 @@ __Using apt__
 
 1. Snap store
 2. Virtualenv
+3. Flameshot
 
 __From snap store__
 

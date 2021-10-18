@@ -26,6 +26,7 @@ print_msg "Continuing install for extra tools"
 
 apt_install "snapd"
 apt_install "virtualenv"
+apt_install "flameshot"
 
 snap_install "spotify"
 snap_install "slack --classic"
