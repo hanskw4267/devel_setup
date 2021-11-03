@@ -29,18 +29,19 @@ sudo apt upgrade -y
 accept_all
 
 print_msg "Installing basic tools"
-apt_install "terminator"
-apt_install "vim"
-apt_install "nano"
-apt_install "wget"
-apt_install "curl"
-apt_install "openssh-server"
-apt_install "build-essential"
-apt_install "cmake"
-apt_install "python3-pip"
-apt_install "net-tools"
-apt_install "valgrind"
-apt_install "htop"
+apt_install terminator
+apt_install vim
+apt_install nano
+apt_install wget
+apt_install curl
+apt_install openssh-server
+apt_install build-essential
+apt_install cmake
+apt_install python3-pip
+apt_install net-tools
+apt_install valgrind
+apt_install htop
+apt_install nmap
 
 if ask_user "Do you wish to install git??" ; then
   echo "Installing Git"

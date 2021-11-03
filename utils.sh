@@ -30,7 +30,7 @@ ask_user () {
   if [[ "$ACCEPT_ALL" == 0 ]] ; then
     true
   else
-    read -r -p "$1 [y/N]" reply
+    read -r -p "$1 [y/N] " reply
     case "$reply" in
       [yY][eE][sS]|[yY] )
         true
