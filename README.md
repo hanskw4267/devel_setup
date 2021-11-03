@@ -81,6 +81,7 @@ __Using apt__
 9. Net-tools
 10. Valgrind
 11. htop
+12. Nmap
 
 __Others__
 
