@@ -93,6 +93,9 @@ if ask_user "Do you wish to install VSCode??" ; then
     code_install pkief.material-icon-theme
     code_install esbenp.prettier-vscode
     code_install redhat.vscode-yaml
+    code_install doi.fileheadercomment
+    code_install akiramiyakoda.cppincludeguard
+
   else
     echo "Okay, no problem. :) Let's move on!"
     echo "Skipping VSCode extensions"

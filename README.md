@@ -108,6 +108,8 @@ ___Current set includes...___
         * [Material icon theme](https://marketplace.visualstudio.com/items?itemName=pkief.material-icon-theme)
         * [Prettier formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
         * [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
+        * [File header comment](https://marketplace.visualstudio.com/items?itemName=doi.fileheadercomment)
+        * [C/C++ Include Guard](https://marketplace.visualstudio.com/items?itemName=akiramiyakoda.cppincludeguard)
 3. My personal aliases (___not recommended to install___)
     * Will add my standard set of aliases to ~/.bashrc
 
