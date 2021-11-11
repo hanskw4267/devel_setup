@@ -77,17 +77,19 @@ if ask_user "Do you wish to install VSCode??" ; then
 
   if ask_user "Do you wish to install some of my favourite VSCode extentions? (you can choose for each)" ; then
     echo "Installing VSCode extensions"
+    code_install ms-vscode.cpptools-extension-pack
+    code_install ms-python.python
+    code_install ms-iot.vscode-ros
+    code_install vscjava.vscode-java-pack
+    code --disable-extensions
     code_install eamodio.gitlens
     code_install coenraads.bracket-pair-colorizer-2
-    code_install ms-vscode.cpptools-extension-pack 
     code_install mhutchie.git-graph
     code_install wayou.vscode-todo-highlight
-    code_install ms-python.python
     code_install oderwat.indent-rainbow
     code_install pkief.material-icon-theme
     code_install esbenp.prettier-vscode
-    code_install ms-iot.vscode-ros
-    code_install vscjava.vscode-java-pack
+    code_install redhat.vscode-yaml
   else
     echo "Okay, no problem. :) Let's move on!"
     echo "Skipping VSCode extensions"

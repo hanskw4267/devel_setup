@@ -163,6 +163,7 @@ os_ver_check() {
   if [[ "$(dpkg --print-architecture)" == "amd64" ]] ; then
     true
   else
+    echo "<-- Failed amd64 check -->"
     false
   fi
 }
@@ -171,6 +172,7 @@ os_ver_check() {
   if [[ "$(dpkg --print-foreign-architectures)" == "i386" ]] ; then
     true
   else
+    echo "<-- Failed i386 architecture check -->"
     false
   fi
 }

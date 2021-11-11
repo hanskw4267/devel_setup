@@ -68,7 +68,7 @@ Script will attempt to check that the system is ubuntu and will warn if check ha
 
 ___Current set includes...___
 
-__Using apt__
+#### __Using apt__
 
 1. Terminator emulator
 2. Vim editor
@@ -82,23 +82,30 @@ __Using apt__
 10. Valgrind
 11. htop
 
-__Others__
+#### __Others__
 
 1. Git
     * Optional git "config" __global__ configuration
 2. Visual studio code
-    * Optional vscode extensions __when installed VSCode__ which includes...
+    * Optional vscode extensions __after installing VSCode__ which includes...
+
+        ##### __Default disabled__
+
+        * [C/C++ Extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
+        * [Python pack](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+        * [ROS pack](https://marketplace.visualstudio.com/items?itemName=ms-iot.vscode-ros)
+        * [Java Extension pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+
+        ##### __Default enabled__
+
         * [Gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
         * [Bracket pair colorizer 2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2)
-        * [C/C++ Extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
         * [Git graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
         * [TODO highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
-        * [Python pack](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
         * [Indent rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
         * [Material icon theme](https://marketplace.visualstudio.com/items?itemName=pkief.material-icon-theme)
         * [Prettier formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-        * [ROS pack](https://marketplace.visualstudio.com/items?itemName=ms-iot.vscode-ros)
-        * [Java Extension pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+        * [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 3. My personal aliases (___not recommended to install___)
     * Will add my standard set of aliases to ~/.bashrc
 
