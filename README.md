@@ -98,8 +98,9 @@ ___Current set includes...___
         * [Java Extension pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 
         ##### __Default enabled__
-
+        
         * [Gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+        * [Remote SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
         * [Bracket pair colorizer 2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2)
         * [Git graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
         * [TODO highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
