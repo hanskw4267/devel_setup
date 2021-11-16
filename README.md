@@ -88,16 +88,10 @@ ___Current set includes...___
     * Optional git "config" __global__ configuration
 2. Visual studio code
     * Optional vscode extensions __after installing VSCode__ which includes...
-
-        ##### __Default disabled__
-
         * [C/C++ Extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
         * [Python pack](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
         * [ROS pack](https://marketplace.visualstudio.com/items?itemName=ms-iot.vscode-ros)
         * [Java Extension pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
-
-        ##### __Default enabled__
-        
         * [Gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
         * [Remote SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
         * [Bracket pair colorizer 2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2)

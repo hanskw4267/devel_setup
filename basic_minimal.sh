@@ -81,9 +81,6 @@ if ask_user "Do you wish to install VSCode??" ; then
     code_install ms-python.python
     code_install ms-iot.vscode-ros
     code_install vscjava.vscode-java-pack
-
-    code --disable-extensions
-    
     code_install eamodio.gitlens
     code_install ms-vscode-remote.remote-ssh
     code_install coenraads.bracket-pair-colorizer-2
