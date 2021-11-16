@@ -16,7 +16,6 @@ source <script_file>
 ___OR___
 
 ```shell
-chmod +x <script_file>
 ./<script_file>
 ```
 
