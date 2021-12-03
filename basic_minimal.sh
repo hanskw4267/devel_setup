@@ -101,7 +101,7 @@ else
   echo "Okay, no problem. :) Let's move on!"
   echo "Skipping VSCode"
 fi
-
+export ACCEPT_ALL=1
 if ask_user "Do you wish to add my aliases to bashrc??" ; then
   echo "#My own aliases----" >> ~/.bashrc
   echo "alias uupgrade=\"sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove\"" >> ~/.bashrc
