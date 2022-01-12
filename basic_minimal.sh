@@ -83,7 +83,6 @@ if ask_user "Do you wish to install VSCode??" ; then
     code_install vscjava.vscode-java-pack
     code_install eamodio.gitlens
     code_install ms-vscode-remote.remote-ssh
-    code_install coenraads.bracket-pair-colorizer-2
     code_install mhutchie.git-graph
     code_install wayou.vscode-todo-highlight
     code_install oderwat.indent-rainbow
