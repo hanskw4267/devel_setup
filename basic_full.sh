@@ -25,16 +25,12 @@ fi
 print_msg "Continuing install for extra tools"
 
 apt_install "snapd"
-apt_install "virtualenv"
 apt_install "flameshot"
 
 snap_install "spotify"
 snap_install "slack --classic"
-snap_install "slack-term"
 snap_install "telegram-desktop"
-snap_install "termius-app"
 snap_install "discord"
-snap_install "skype"
 snap_install "teams"
 
 if ask_user "Do you wish to install google chrome??" ; then

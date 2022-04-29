@@ -91,7 +91,6 @@ ___Current set includes...___
         * [C/C++ Extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
         * [Python pack](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
         * [ROS pack](https://marketplace.visualstudio.com/items?itemName=ms-iot.vscode-ros)
-        * [Java Extension pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
         * [Gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
         * [Remote SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
         * [Git graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
@@ -102,7 +101,8 @@ ___Current set includes...___
         * [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
         * [File header comment](https://marketplace.visualstudio.com/items?itemName=doi.fileheadercomment)
         * [C/C++ Include Guard](https://marketplace.visualstudio.com/items?itemName=akiramiyakoda.cppincludeguard)
-3. My personal aliases (___not recommended to install, will always ask___)
+3. [Pyenv](https://github.com/pyenv/pyenv)
+4. My personal aliases (___not recommended to install, will always ask___)
     * Will add my standard set of aliases to ~/.bashrc
 
 ----
@@ -125,12 +125,9 @@ __From snap store__
 
 1. [Spotify](https://snapcraft.io/spotify)
 2. [Slack](https://snapcraft.io/slack)
-3. [Slack terminal](https://snapcraft.io/slack-term)
-4. [Telegram](https://snapcraft.io/telegram-desktop)
-5. [Termius app](https://snapcraft.io/termius-app)
-6. [Discord](https://snapcraft.io/discord)
-7. [Skype](https://snapcraft.io/skype)
-8. [Microsoft teams](https://snapcraft.io/teams)
+3. [Telegram](https://snapcraft.io/telegram-desktop)
+4. [Discord](https://snapcraft.io/discord)
+5. [Microsoft teams](https://snapcraft.io/teams)
 
 __Others__
 
