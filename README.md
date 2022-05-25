@@ -101,8 +101,7 @@ ___Current set includes...___
         * [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
         * [File header comment](https://marketplace.visualstudio.com/items?itemName=doi.fileheadercomment)
         * [C/C++ Include Guard](https://marketplace.visualstudio.com/items?itemName=akiramiyakoda.cppincludeguard)
-3. [Pyenv](https://github.com/pyenv/pyenv)
-4. My personal aliases (___not recommended to install, will always ask___)
+3. My personal aliases (___not recommended to install, will always ask___)
     * Will add my standard set of aliases to ~/.bashrc
 
 ----
@@ -134,6 +133,7 @@ __Others__
 1. Google chrome browser
 2. Teamviewer
 3. Zoom
+4. [Pyenv](https://github.com/pyenv/pyenv)
 ----
 
 ### [wine_install.sh](./wine_install.sh)
