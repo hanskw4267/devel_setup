@@ -36,7 +36,7 @@ select reply in "melodic" "noetic"; do
   done
 
 if os_ver_check "${verArray[$ROS_DISTRO]}" ; then
-    return 255
+    exit 255
 fi
 
 echo "-------------------------------------------------"
