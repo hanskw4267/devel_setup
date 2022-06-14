@@ -19,12 +19,12 @@ root_guard
 print_msg "WINE ubuntu install - Hans"
 
 if os_check ; then
-  return 255
+  exit 255
 fi
 
 if ask_user "This script will install wine from WineHQ, have you previously install wine from another source??" ; then
   echo " please remove any old installations before attempting to install using this script"
-  return 255
+  exit 255
 fi
 
 # if both checks fail, exit
@@ -37,7 +37,7 @@ if 64b_check ; then
   echo "<-- System architecture ok -->"
 else
   echo "<-- Unknown system architecture --> "
-  return 255
+  exit 255
 fi
 
 # ------------------------------------------------------------------------------

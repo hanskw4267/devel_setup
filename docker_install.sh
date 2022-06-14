@@ -19,12 +19,12 @@ root_guard
 print_msg "Docker (compose) Install - Hans"
 
 if os_check ; then
-    return 255
+    exit 255
 else
   if 64b_check ; then
     :
   else
-    return 255
+    exit 255
   fi
 fi
 # ------------------------------------------------------------------------------

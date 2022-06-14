@@ -19,7 +19,7 @@ source $(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/basic_minimal.sh
 
 ret=$?
 if [[ "${ret}" -ne 0 ]] ; then
-  return 255
+  exit 255
 fi
 
 print_msg "Continuing install for extra tools"

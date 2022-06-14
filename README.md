@@ -49,6 +49,7 @@ Choose between ROS2 distros and configurations to install on the system
 1. dashing (bionic)
 2. foxy (focal)
 3. galactic (focal)
+4. humble (jammy)
 
 Script will attempt to check that the system has the correct ubuntu version for the chosen distro and will warn if check has failed (___warning ignorable___).
 
@@ -69,18 +70,20 @@ ___Current set includes...___
 
 #### __Using apt__
 
-1. Terminator emulator
-2. Vim editor
-3. Nano editor
-4. Wget
-5. Curl
-6. Openssh server and client
-7. Build essentials and cmake
-8. Pip3
-9. Net-tools
-10. Valgrind
-11. htop
-12. Nmap
+1. terminator emulator
+2. vim editor
+3. nano editor
+4. wget
+5. curl
+6. openssh-server
+7. build-essential
+8. cmake
+9. python3-pip
+10. net-tools
+11. valgrind
+12. htop
+13. nmap
+14. can-utils
 
 #### __Others__
 
