@@ -139,11 +139,13 @@ os_check () {
 os_ver_check() {
   print_msg "Checking system version"
   source_os
+  echo "Recommended OS: $1"
+  echo "-------------------------------------------------"
   if [[ "$NAME" == "Ubuntu" ]] && [[ "$VERSION_CODENAME" == "$1" ]] ; then
     echo " <-- SYSTEM VERSION CHECK OK --> "
     false
   else
-    read -r -p " Your system is not Ubuntu "$1" , continue to setup anyways? [y/N]" reply
+    read -r -p "Your system is not Ubuntu "$1", continue to setup anyways? [y/N]" reply
     case "$reply" in
       [yY][eE][sS]|[yY] )
         echo " <-- SYSTEM VERSION CHECK FAILED BUT CONTINUING --> "
