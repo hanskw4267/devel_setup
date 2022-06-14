@@ -18,7 +18,7 @@ root_guard
 print_msg "Basic Development Setup - Hans"
 
 if os_check ; then
-    return 255
+    exit 255
 fi
 # ------------------------------------------------------------------------------
 
@@ -42,6 +42,7 @@ apt_install net-tools
 apt_install valgrind
 apt_install htop
 apt_install nmap
+apt_install can-utils
 
 if ask_user "Do you wish to install git??" ; then
   echo "Installing Git"
