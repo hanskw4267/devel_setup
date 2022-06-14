@@ -137,6 +137,7 @@ __Others__
 2. Teamviewer
 3. Zoom
 4. [Pyenv](https://github.com/pyenv/pyenv)
+5. [Kicad 6.0](https://www.kicad.org/)
 ----
 
 ### [wine_install.sh](./wine_install.sh)
