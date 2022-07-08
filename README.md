@@ -138,6 +138,7 @@ __Others__
 3. Zoom
 4. [Pyenv](https://github.com/pyenv/pyenv)
 5. [Kicad 6.0](https://www.kicad.org/)
+6. [Virtualbox 6.1](https://www.virtualbox.org/wiki/Downloads)
 ----
 
 ### [wine_install.sh](./wine_install.sh)
