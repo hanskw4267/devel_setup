@@ -43,6 +43,7 @@ apt_install valgrind
 apt_install htop
 apt_install nmap
 apt_install can-utils
+apt_install software-properties-common
 
 if ask_user "Do you wish to install git??" ; then
   echo "Installing Git"
@@ -78,6 +79,7 @@ if ask_user "Do you wish to install VSCode??" ; then
 
   if ask_user "Do you wish to install some of my favourite VSCode extentions? (you can choose for each)" ; then
     echo "Installing VSCode extensions"
+    accept_all
     code_install ms-vscode.cpptools-extension-pack
     code_install ms-python.python
     code_install ms-iot.vscode-ros
@@ -91,6 +93,7 @@ if ask_user "Do you wish to install VSCode??" ; then
     code_install redhat.vscode-yaml
     code_install doi.fileheadercomment
     code_install akiramiyakoda.cppincludeguard
+    export ACCEPT_ALL=1
 
   else
     echo "Okay, no problem. :) Let's move on!"

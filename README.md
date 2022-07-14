@@ -84,6 +84,7 @@ ___Current set includes...___
 12. htop
 13. nmap
 14. can-utils
+15. software-properties-common
 
 #### __Others__
 
