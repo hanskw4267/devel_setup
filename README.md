@@ -107,3 +107,7 @@ __Others__
 6. [Virtualbox 6.1](https://www.virtualbox.org/wiki/Downloads)
 
 ----
+
+### [Others](./scripts)
+
+These scripts each install a specific tool/software/library, each can be ran on their own.
