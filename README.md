@@ -6,6 +6,7 @@ Tested on Ubuntu 18.04/20.04/22.04
 
 Feel free to open a issue for any bugs you find, or any ideas for new scripts to add. :D
 
+
 ## Running the scripts
 
 __BASH EXPECTED__  
@@ -21,6 +22,9 @@ ___OR___
 ./<script_file>
 ```
 
+> ___Caution: scripts will ask if you want to accept all future prompts for specific sections,
+accepting will cause the script to attempt to install everything the script can install. (will still need inputs for stuff like git config, etc)___  
+> ___YOU HAVE BEEN WARNED___
 
 ## The scripts
 
