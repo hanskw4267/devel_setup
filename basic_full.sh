@@ -11,24 +11,25 @@
 # Copyright (c) 2021 Hans Kurnia
 #
 
-source $(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/scripts/utils.sh
+BASEDIR=$(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")
+source ${BASEDIR}/scripts/utils.sh
 root_guard
 # ------------------------------------------------------------------------------
 
-./$(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/basic_minimal.sh
+./${BASEDIR}/basic_minimal.sh
 
 ret=$?
 if [[ "${ret}" -ne 0 ]] ; then
   exit 255
 fi
 
-./$(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/scripts/tools2_install.sh
-./$(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/scripts/chrome_install.sh
-./$(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/scripts/teamviewer_install.sh
-./$(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/scripts/zoom_install.sh
-./$(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/scripts/pyenv_install.sh
-./$(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/scripts/kicad6_install.sh
-./$(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/scripts/virtualbox61_install.sh
+./${BASEDIR}/scripts/tools2_install.sh
+./${BASEDIR}/scripts/chrome_install.sh
+./${BASEDIR}/scripts/teamviewer_install.sh
+./${BASEDIR}/scripts/zoom_install.sh
+./${BASEDIR}/scripts/pyenv_install.sh
+./${BASEDIR}/scripts/kicad6_install.sh
+./${BASEDIR}/scripts/virtualbox61_install.sh
 
 print_msg "cleaning with autoremove"
 sudo apt autoremove -y

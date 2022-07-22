@@ -10,8 +10,8 @@
 #  
 # Copyright (c) 2021 Hans Kurnia
 #
-
-source $(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/scripts/utils.sh
+BASEDIR=$(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")
+source ${BASEDIR}/scripts/utils.sh
 root_guard
 # ------------------------------------------------------------------------------
 
@@ -26,9 +26,9 @@ print_msg "<-- Updating base system -->"
 sudo apt update
 sudo apt upgrade -y
 
-./$(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/scripts/tools_install.sh
-./$(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/scripts/git_install.sh
-./$(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/scripts/vscode_install.sh
+./${BASEDIR}/scripts/tools_install.sh
+./${BASEDIR}/scripts/git_install.sh
+./${BASEDIR}/scripts/vscode_install.sh
 
 if ask_user "Do you wish to add my aliases to bashrc??" ; then
   echo "#My own aliases----" >> ~/.bashrc
