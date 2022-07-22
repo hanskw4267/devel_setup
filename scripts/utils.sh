@@ -44,7 +44,7 @@ ask_user () {
 
 accept_all () {
   export ACCEPT_ALL=1
-  if ask_user "Accept all future prompts?? (i.e. attempt install EVERYTHING, please check if this is what you want)" ; then
+  if ask_user "Accept all future prompts for ${1}?? (i.e. attempt install EVERYTHING, please check if this is what you want)" ; then
   ACCEPT_ALL=0
   export ACCEPT_ALL
   fi

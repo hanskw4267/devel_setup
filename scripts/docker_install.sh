@@ -11,7 +11,6 @@
 # Copyright (c) 2021 Hans Kurnia
 #
 
-
 source $(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/utils.sh
 root_guard
 # ------------------------------------------------------------------------------
@@ -33,7 +32,7 @@ print_msg "<-- Updating base system -->"
 sudo apt update
 sudo apt upgrade -y
 
-accept_all
+accept_all "docker & docker-compose"
 
 print_msg 'Installing docker' 
 sudo apt remove docker docker-engine docker.io containerd runc

@@ -68,7 +68,7 @@ print_msg "<-- Updating base system -->"
 sudo apt update
 sudo apt upgrade -y
 
-accept_all
+accept_all "ros, rosdep & catkin-tools"
 
 echo "-------------------------------------------------"
 echo " <-- Installing ROS "${ROS_DISTRO}" -->"
@@ -85,6 +85,8 @@ source /opt/ros/"${ROS_DISTRO}"/setup.bash
 if ask_user " Add ROS "${ROS_DISTRO}" setup.bash sourcing to bashrc??" ; then
   echo "# ROS "${ROS_DISTRO}" sourcing" >> ~/.bashrc
   echo "source /opt/ros/"${ROS_DISTRO}"/setup.bash" >> ~/.bashrc
+  echo "#export ROS_MASTER_URI=http://{IP_ADDRESS}:11311" >> ~/.bashrc
+  echo "#export ROS_HOSTNAME=192.168.29.111" >> ~/.bashrc
   echo "Do check the sourcing was applied after this"
 else
   echo "Okay, no problem. :) Let's move on!"
