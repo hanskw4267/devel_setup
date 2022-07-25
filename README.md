@@ -1,8 +1,11 @@
 # devel-setup
 
-Collection of setup scripts i use
+Collection of setup scripts i use.
+
+Tested on Ubuntu 18.04/20.04/22.04
 
 Feel free to open a issue for any bugs you find, or any ideas for new scripts to add. :D
+
 
 ## Running the scripts
 
@@ -19,46 +22,11 @@ ___OR___
 ./<script_file>
 ```
 
-> ___Caution: scripts will ask if you want to accept all future prompts,
+> ___Caution: scripts will ask if you want to accept all future prompts for specific sections,
 accepting will cause the script to attempt to install everything the script can install. (will still need inputs for stuff like git config, etc)___  
 > ___YOU HAVE BEEN WARNED___
 
 ## The scripts
-
-### [ros_install.sh](./ros_install.sh)
-
-Choose between ROS1 distros and configurations to install on the system
-
-1. melodic (bionic)
-2. noetic (focal)
-
-Script will attempt to check that the system has the correct ubuntu version for the chosen distro and will warn if check has failed (___warning ignorable___).
-
-Additionally choose to...
-
-1. Add installed ros' setup.bash sourcing to .bashrc
-2. Install & init rosdep
-3. Install catkin tools
-
-----
-
-### [ros2_install.sh](./ros2_install.sh)
-
-Choose between ROS2 distros and configurations to install on the system
-
-1. dashing (bionic)
-2. foxy (focal)
-3. galactic (focal)
-4. humble (jammy)
-
-Script will attempt to check that the system has the correct ubuntu version for the chosen distro and will warn if check has failed (___warning ignorable___).
-
-Additionally choose to...
-
-1. Add installed ros' setup.bash sourcing to .bashrc
-2. Install & source colcon
-
-----
 
 ### [basic_minimal.sh](./basic_minimal.sh)
 
@@ -85,6 +53,7 @@ ___Current set includes...___
 13. nmap
 14. can-utils
 15. software-properties-common
+16. screen
 
 #### __Others__
 
@@ -140,15 +109,9 @@ __Others__
 4. [Pyenv](https://github.com/pyenv/pyenv)
 5. [Kicad 6.0](https://www.kicad.org/)
 6. [Virtualbox 6.1](https://www.virtualbox.org/wiki/Downloads)
-----
-
-### [wine_install.sh](./wine_install.sh)
-
-Installs the [WINE](https://www.winehq.org/) compatibility layer on a ubuntu system.
 
 ----
 
-### [docker_install.sh](./docker_install.sh)
+### [Others](./scripts)
 
-Installs [Docker](https://www.docker.com/) onto a ubuntu system.  
-Optionally install docker compose
+These scripts each install a specific tool/software/library, each can be ran on their own.

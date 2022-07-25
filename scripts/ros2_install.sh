@@ -73,7 +73,8 @@ print_msg "<-- Updating base system -->"
 sudo apt update
 sudo apt upgrade -y
 
-accept_all
+accept_all "ros2 & colcon"
+
 print_msg "Installing ROS2 "${ROS_DISTRO}""
 
 echo " <--- Setting apt server --> "
@@ -106,8 +107,5 @@ else
   echo "Okay, no problem. :) Let's move on!"
   echo "Skipping colcon"
 fi
-
-print_msg "cleaning with autoremove"
-sudo apt autoremove
 
 print_msg "ROS2 Install Done"
