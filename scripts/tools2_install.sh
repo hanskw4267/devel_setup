@@ -20,6 +20,7 @@ print_msg "Installing extra tools"
 
 apt_install "snapd"
 apt_install "flameshot"
+apt_install "baobab"
 
 snap_install "spotify"
 snap_install "slack --classic"
