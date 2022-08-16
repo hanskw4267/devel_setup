@@ -44,6 +44,7 @@ echo \
 
 sudo apt update
 sudo apt install -y docker-ce docker-ce-cli containerd.io
+sudo usermod -aG docker ${USER}
 
 print_msg "Trying hello-world image"
 sudo docker run hello-world
