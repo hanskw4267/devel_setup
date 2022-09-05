@@ -24,6 +24,7 @@ if [[ "${ret}" -ne 0 ]] ; then
 fi
 
 ./${BASEDIR}/scripts/tools2_install.sh
+./${BASEDIR}/scripts/docker_install.sh
 ./${BASEDIR}/scripts/chrome_install.sh
 ./${BASEDIR}/scripts/teamviewer_install.sh
 ./${BASEDIR}/scripts/zoom_install.sh

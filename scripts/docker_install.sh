@@ -15,8 +15,6 @@ source $(dirname "${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}")/utils.sh
 root_guard
 # ------------------------------------------------------------------------------
 
-print_msg "Docker (compose) Install - Hans"
-
 if os_check ; then
     exit 255
 else
@@ -28,26 +26,27 @@ else
 fi
 # ------------------------------------------------------------------------------
 
-print_msg "<-- Updating base system -->"
-sudo apt update
-sudo apt upgrade -y
-
 accept_all "docker & docker-compose"
 
-print_msg 'Installing docker' 
-sudo apt remove docker docker-engine docker.io containerd runc
-sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-echo \
-  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+if ask_user "Do you wish to install docker??" ; then
+  echo 'Installing docker' 
+  sudo apt remove docker docker-engine docker.io containerd runc
+  sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+  echo \
+    "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-sudo apt update
-sudo apt install -y docker-ce docker-ce-cli containerd.io
-sudo usermod -aG docker ${USER}
+  sudo apt update
+  sudo apt install -y docker-ce docker-ce-cli containerd.io
+  sudo usermod -aG docker ${USER}
 
-print_msg "Trying hello-world image"
-sudo docker run hello-world
+  print_msg "Trying hello-world image"
+  sudo docker run hello-world
+else
+  echo "Okay, no problem. :) Let's move on!"
+  echo "Skipping Docker"
+fi
 
 if ask_user "Do you wish to install docker compose??" ; then
   echo 'installing docker compose' 
@@ -56,7 +55,7 @@ if ask_user "Do you wish to install docker compose??" ; then
   docker-compose --version
 else
   echo "Okay, no problem. :) Let's move on!"
-  echo "Skipping Docker"
+  echo "Skipping Docker-compose"
 fi
 
 print_msg "Docker (compose) install done :D"
