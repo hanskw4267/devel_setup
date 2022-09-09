@@ -42,10 +42,6 @@ fi
 
 # ------------------------------------------------------------------------------
 
-print_msg "<-- Updating base system -->"
-sudo apt update
-sudo apt upgrade -y
-
 print_msg "Installing WINE now"
 
 if [[ "$VERSION_ID" == *"18"* ]] ; then

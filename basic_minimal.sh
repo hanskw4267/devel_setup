@@ -22,9 +22,11 @@ if os_check ; then
 fi
 # ------------------------------------------------------------------------------
 
-print_msg "<-- Updating base system -->"
-sudo apt update
-sudo apt upgrade -y
+if ask_user "Update/Upgrade system first?" ; then
+  print_msg "<-- Updating base system -->"
+  sudo apt update
+  sudo apt upgrade -y
+fi
 
 ./${BASEDIR}/scripts/tools_install.sh
 ./${BASEDIR}/scripts/git_install.sh

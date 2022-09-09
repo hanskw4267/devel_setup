@@ -68,11 +68,6 @@ select reply in "base" "desktop"; do
 
 print_msg " Chosen ROS distro:"${ROS_DISTRO}" config:"${ROS_CONFIG}""
 # ------------------------------------------------------------------------------
-
-print_msg "<-- Updating base system -->"
-sudo apt update
-sudo apt upgrade -y
-
 accept_all "ros2 & colcon"
 
 print_msg "Installing ROS2 "${ROS_DISTRO}""
