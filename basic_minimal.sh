@@ -23,7 +23,7 @@ fi
 # ------------------------------------------------------------------------------
 
 if ask_user "Update/Upgrade system first?" ; then
-  print_msg "<-- Updating base system -->"
+  print_msg "Updating base system"
   sudo apt update
   sudo apt upgrade -y
 fi

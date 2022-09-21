@@ -21,12 +21,11 @@ root_guard() {
 
 print_msg() {
   echo "-------------------------------------------------"
-  echo "<-- "$1" -->"
+  echo -e "<-- "$1" -->"
   echo "-------------------------------------------------"
 }
 
 ask_user () {
-  echo "-------------------------------------------------"
   if [[ "$ACCEPT_ALL" == 0 ]] ; then
     true
   else
@@ -55,9 +54,9 @@ apt_install () {
     echo "Installing "$1""
     sudo apt install -y $1
     if [ $? -eq 0 ]; then
-      echo "<--------------------------- $1 Install OK"
+      print_msg "$1 Install OK"
     else
-      echo "<--------------------------- $1 Install failed"
+      print_msg "$1 Install failed"
       exit $?
     fi
   else
@@ -71,9 +70,9 @@ code_install () {
     echo "Installing "$1""
     code --install-extension $1
     if [ $? -eq 0 ]; then
-      echo "<--------------------------- $1 Install OK"
+      print_msg "$1 Install OK"
     else
-      echo "<--------------------------- $1 Install failed"
+      print_msg "$1 Install failed"
       exit $?
     fi
   else
@@ -87,9 +86,9 @@ snap_install () {
     echo "Installing "$1""
     sudo snap install $1
     if [ $? -eq 0 ]; then
-      echo "<--------------------------- $1 Install OK"
+      print_msg "$1 Install OK"
     else
-      echo "<--------------------------- $1 Install failed"
+      print_msg "$1 Install failed"
       exit $?
     fi
   else
@@ -118,18 +117,17 @@ os_check () {
   print_msg "Checking system version"
   source_os
   if [[ "$NAME" == "Ubuntu" ]] ; then
-    echo " <-- SYSTEM VERSION CHECK OK --> "
+    print_msg " SYSTEM VERSION CHECK OK "
     false
   else
     read -r -p " Your system is not Ubuntu, continue to setup anyways? [y/N]" reply
     case "$reply" in
       [yY][eE][sS]|[yY] )
-        echo " <-- SYSTEM VERSION CHECK FAILED BUT CONTINUING --> "
+        print_msg " SYSTEM VERSION CHECK FAILED BUT CONTINUING "
         false
         ;;
       * )
-        echo " <-- SYSTEM VERSION CHECK FAILED --> "
-        echo "-------------------------------------------------"
+        print_msg " SYSTEM VERSION CHECK FAILED "
         true
         ;;
     esac
@@ -140,20 +138,18 @@ os_ver_check() {
   print_msg "Checking system version"
   source_os
   echo "Recommended OS: $1"
-  echo "-------------------------------------------------"
   if [[ "$NAME" == "Ubuntu" ]] && [[ "$VERSION_CODENAME" == "$1" ]] ; then
-    echo " <-- SYSTEM VERSION CHECK OK --> "
+    print_msg " SYSTEM VERSION CHECK OK "
     false
   else
     read -r -p "Your system is not Ubuntu "$1", continue to setup anyways? [y/N]" reply
     case "$reply" in
       [yY][eE][sS]|[yY] )
-        echo " <-- SYSTEM VERSION CHECK FAILED BUT CONTINUING --> "
+        print_msg " SYSTEM VERSION CHECK FAILED BUT CONTINUING "
         false
         ;;
       * )
-        echo " <-- SYSTEM VERSION CHECK FAILED --> "
-        echo "-------------------------------------------------"
+        print_msg " SYSTEM VERSION CHECK FAILED "
         true
         ;;
     esac
