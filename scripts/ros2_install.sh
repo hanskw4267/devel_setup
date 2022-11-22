@@ -68,7 +68,7 @@ select reply in "base" "desktop"; do
 
 print_msg " Chosen ROS distro:"${ROS_DISTRO}" config:"${ROS_CONFIG}""
 # ------------------------------------------------------------------------------
-accept_all "ros2 & colcon"
+accept_all "ros2 & colcon & rosdep"
 
 print_msg "Installing ROS2 "${ROS_DISTRO}""
 
@@ -101,6 +101,22 @@ if ask_user "Do you wish to install colcon??" ; then
 else
   echo "Okay, no problem. :) Let's move on!"
   echo "Skipping colcon"
+fi
+
+if ask_user " Install and init rosdep??" ; then
+  echo "Install and initializing rosdep!!"
+  
+  sudo apt install -y python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+
+  # Only init if it has not already been done before
+  if [ ! -e /etc/ros/rosdep/sources.list.d/20-default.list ]; then
+    sudo rosdep init
+  fi
+  rosdep update
+  echo "alias rosdep_install=\"rosdep install --ignore-src --from-paths src -r -y \"" >> ~/.bashrc
+else
+  echo "Okay, no problem. :) Let's move on!"
+  echo "Skipping rosdep"
 fi
 
 print_msg "ROS2 Install Done"

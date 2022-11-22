@@ -104,6 +104,7 @@ if ask_user " Install and init rosdep??" ; then
     sudo rosdep init
   fi
   rosdep update
+  echo "alias rosdep_install=\"rosdep install --ignore-src --from-paths src -r -y \"" >> ~/.bashrc
 else
   echo "Okay, no problem. :) Let's move on!"
   echo "Skipping rosdep"
