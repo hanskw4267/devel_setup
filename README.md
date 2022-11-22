@@ -54,6 +54,7 @@ ___Current set includes...___
 14. can-utils
 15. software-properties-common
 16. screen
+17. python3-vcstool
 
 #### __Others__
 
