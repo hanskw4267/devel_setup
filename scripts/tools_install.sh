@@ -33,4 +33,3 @@ apt_install nmap
 apt_install can-utils
 apt_install software-properties-common
 apt_install screen
-apt_install python3-vcstool
