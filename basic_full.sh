@@ -31,6 +31,7 @@ fi
 ./${BASEDIR}/scripts/pyenv_install.sh
 ./${BASEDIR}/scripts/kicad6_install.sh
 ./${BASEDIR}/scripts/virtualbox61_install.sh
+./${BASEDIR}/scripts/extra_apps.sh
 
 print_msg "cleaning with autoremove"
 sudo apt autoremove -y
