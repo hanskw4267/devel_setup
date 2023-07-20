@@ -18,9 +18,9 @@ root_guard
 
 print_msg "ROS2 Install - Hans"
 
-declare -A verArray=(["dashing"]="bionic" ["foxy"]="focal" ["galactic"]="focal" ["humble"]="jammy")
+declare -A verArray=(["dashing"]="bionic" ["foxy"]="focal" ["galactic"]="focal" ["humble"]="jammy" ["iron"]="jammy")
 echo " Which version of ROS2 to install??"
-select reply in "dashing" "foxy" "galactic" "humble"; do
+select reply in "dashing" "foxy" "galactic" "humble" "iron"; do
     case $reply in
       dashing )
         ROS_DISTRO="dashing"
@@ -36,6 +36,10 @@ select reply in "dashing" "foxy" "galactic" "humble"; do
         ;;
       humble )
         ROS_DISTRO="humble"
+        break
+        ;;
+      iron )
+        ROS_DISTRO="iron"
         break
         ;;
       * )
