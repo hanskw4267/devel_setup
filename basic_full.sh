@@ -29,7 +29,7 @@ fi
 ./${BASEDIR}/scripts/teamviewer_install.sh
 ./${BASEDIR}/scripts/zoom_install.sh
 ./${BASEDIR}/scripts/pyenv_install.sh
-./${BASEDIR}/scripts/kicad6_install.sh
+./${BASEDIR}/scripts/kicad_install.sh
 ./${BASEDIR}/scripts/virtualbox61_install.sh
 ./${BASEDIR}/scripts/extra_apps.sh
 
