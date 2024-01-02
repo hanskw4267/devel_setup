@@ -92,6 +92,7 @@ __Using apt__
 1. Snap store
 2. Virtualenv
 3. Flameshot
+4. Ncdu
 
 __From snap store__
 
