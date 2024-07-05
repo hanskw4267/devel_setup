@@ -18,9 +18,9 @@ root_guard
 
 print_msg "ROS2 Install - Hans"
 
-declare -A verArray=(["dashing"]="bionic" ["foxy"]="focal" ["galactic"]="focal" ["humble"]="jammy" ["iron"]="jammy")
+declare -A verArray=(["dashing"]="bionic" ["foxy"]="focal" ["galactic"]="focal" ["humble"]="jammy" ["iron"]="jammy" ["jazzy"]="noble" )
 echo " Which version of ROS2 to install??"
-select reply in "dashing" "foxy" "galactic" "humble" "iron"; do
+select reply in "dashing" "foxy" "galactic" "humble" "iron" "jazzy"; do
     case $reply in
       dashing )
         ROS_DISTRO="dashing"
@@ -40,6 +40,10 @@ select reply in "dashing" "foxy" "galactic" "humble" "iron"; do
         ;;
       iron )
         ROS_DISTRO="iron"
+        break
+        ;;
+      jazzy )
+        ROS_DISTRO="jazzy"
         break
         ;;
       * )
@@ -83,6 +87,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-a
 
 echo " <-- Installing ROS2 --> "
 sudo apt update
+sudo apt install -y ros-dev-tools
 sudo apt install -y ros-"${ROS_DISTRO}"-"${ROS_CONFIG}"
 
 if ask_user "Add ROS2 "${ROS_DISTRO}" setup.bash sourcing to bashrc??" ; then
