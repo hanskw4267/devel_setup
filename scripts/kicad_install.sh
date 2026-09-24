@@ -17,7 +17,7 @@ root_guard
 if ask_user "Do you wish to install KiCad??" ; then
 
 echo " Which version of KiCad to install??"
-select reply in "6.0" "7.0" "8.0"; do
+select reply in "6.0" "7.0" "8.0" "9.0"; do
     case $reply in
       6.0 )
         KICAD_VERSION="6.0"
@@ -29,6 +29,10 @@ select reply in "6.0" "7.0" "8.0"; do
         ;;
       8.0 )
         KICAD_VERSION="8.0"
+        break
+        ;;
+      9.0 )
+        KICAD_VERSION="9.0"
         break
         ;;
       * )
